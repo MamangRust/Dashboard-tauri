@@ -1,4 +1,3 @@
-import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
@@ -50,8 +49,8 @@ type ProfileFormValues = z.infer<typeof profileFormSchema>;
 const defaultValues: Partial<ProfileFormValues> = {
   bio: "I'm a software developer...",
   urls: {
-    twitter: "https://twitter.com/johndoe",
-    github: "https://github.com/johndoe",
+    twitter: "https://twitter.com/renaldyhidayatt",
+    github: "https://github.com/renaldyhidayatt",
   },
 };
 
@@ -76,11 +75,11 @@ export default function ProfilePage() {
               <div className="flex items-center space-x-4">
                 <Avatar className="w-20 h-20">
                 <AvatarImage src={Luffy} alt="User" />
-                  <AvatarFallback>JD</AvatarFallback>
+                  <AvatarFallback>RH</AvatarFallback>
                 </Avatar>
                 <div>
-                  <CardTitle>John Doe</CardTitle>
-                  <CardDescription>Software Developer</CardDescription>
+                  <CardTitle>Renaldy Hidayat</CardTitle>
+                  <CardDescription>Software Engginer</CardDescription>
                 </div>
               </div>
             </CardHeader>

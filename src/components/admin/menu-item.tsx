@@ -47,14 +47,14 @@ export default function MenuItemComponent({
 }) {
   const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
-  const hasChildren = (item.children?.length ?? 0) > 0 // Optional chaining to check if 'children' exists
+  const hasChildren = (item.children?.length ?? 0) > 0; // Optional chaining to check if 'children' exists
   const Icon = item.icon;
 
   return (
     <li>
       <Button
         variant="ghost"
-        className={`w-full text-white dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-gray-700 justify-start ${
+        className={`w-full text-white hover:text-white hover:bg-blue-400 dark:hover:bg-gray-700 justify-start ${
           isOpen ? "px-3" : "px-0 justify-center"
         }`}
         onClick={() => hasChildren && setIsSubmenuOpen(!isSubmenuOpen)}

@@ -77,6 +77,9 @@ import {
   Plus,
 } from "lucide-react";
 import { Payment } from "@/types/payment";
+import { AddPayment } from "@/components/admin/modal/addPayment";
+import { ImportExcelDialog } from "@/components/admin/modal/importExcel";
+import { AddEmployee } from "@/components/admin/modal/addEmployee";
 
 export const columns: ColumnDef<Payment>[] = [
   {
@@ -248,14 +251,7 @@ export default function TablePayment() {
               <div className="flex justify-between items-center">
                 <h3 className="text-lg font-semibold">Table Payment</h3>
                 <div className="space-x-2">
-                  <Button
-                    // onClick={handleImportExcel}
-                    variant="outline"
-                    size="sm"
-                  >
-                    <FileUp className="mr-2 h-4 w-4" />
-                    Import Excel
-                  </Button>
+                  <ImportExcelDialog onImport={0} />
                   <Button
                     // onClick={handleExportExcel}
                     variant="outline"
@@ -264,14 +260,15 @@ export default function TablePayment() {
                     <FileDown className="mr-2 h-4 w-4" />
                     Export Excel
                   </Button>
-                  <Button
+                  {/* <Button
                     // onClick={handleAddPayment}
                     variant="default"
                     size="sm"
                   >
                     <Plus className="mr-2 h-4 w-4" />
                     Add Payment
-                  </Button>
+                  </Button> */}
+                  <AddEmployee onSubmit={0} />
                 </div>
               </div>
             </CardHeader>

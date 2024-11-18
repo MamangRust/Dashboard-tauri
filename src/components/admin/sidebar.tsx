@@ -1,13 +1,12 @@
 import { Button } from "../ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import MenuItemComponent, { menuItems } from "./menu-item";
+import ReactLogo from "@/assets/react.svg";
 
 export default function Sidebar({
-  
   isOpen,
   setIsOpen,
 }: {
-
   isOpen: boolean;
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }) {
@@ -18,11 +17,22 @@ export default function Sidebar({
       } h-screen`}
     >
       <div className="flex flex-col h-full">
+        <div className={`flex items-center ${isOpen ? "p-4" : "justify-center py-4"}`}>
+          <img
+            src={ReactLogo}
+            alt="Logo"
+            className="h-8 w-8"
+          />
+          {isOpen && (
+            <span className="ml-2 text-lg font-semibold">Point Of Sale</span> // Title
+          )}
+        </div>
+
         <Button
           variant="ghost"
           size="icon"
           className="self-end m-2 text-white dark:text-gray-300 hover:bg-blue-600 dark:hover:bg-gray-700"
-          onClick={() => setIsOpen(!isOpen)} 
+          onClick={() => setIsOpen(!isOpen)}
         >
           {isOpen ? <ChevronLeft /> : <ChevronRight />}
         </Button>
@@ -31,11 +41,7 @@ export default function Sidebar({
         <nav className="flex-1 overflow-y-auto">
           <ul className="space-y-2">
             {menuItems.map((item, index) => (
-              <MenuItemComponent
-                key={index}
-                item={item}
-                isOpen={isOpen} 
-              />
+              <MenuItemComponent key={index} item={item} isOpen={isOpen} />
             ))}
           </ul>
         </nav>
